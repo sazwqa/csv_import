@@ -1,0 +1,4 @@
+== CSV Importer
+
+Allows you to import CSV files as AR objects. Contains an intermediate step that 
+allows you to map CSV fields to object's attributes.

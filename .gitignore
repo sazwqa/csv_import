@@ -1,0 +1,10 @@
+log/*
+tmp/*
+tmp/**/*
+doc/*
+doc/**/*
+config/database.yml
+db/*.db
+.project
+.eprj
+.loadpath

@@ -1,0 +1,36 @@
+<h1>Select CSV fields</h1>
+
+<% form_tag(parse_data_users_path, :method => :post) do %>
+  
+  <%= link_to_function('skip all', "skip_fields()") %>
+  <div>
+    <% @csv_header.each do |csv_field| -%>
+    <div>
+      Map <label><%= csv_field %></label> to <%= select_tag "user[#{csv_field}]", 
+      options_for_select([[]] + @model_fields, csv_field.downcase) %>
+      <%= link_to_function('skip', "skip_field('user_#{csv_field}')")%>
+    </div>
+    <% end -%>
+  </div>
+  
+  <br />
+  <div>
+    <%= submit_tag 'Select' %>
+  </div>
+<% end -%>
+
+<%= link_to 'Back', load_data_users_path %>
+<script>
+  function skip_field(field_id)
+  {
+    document.getElementById(field_id).selectedIndex = 0;
+  }
+  function skip_fields()
+  {
+    elements = document.getElementsByTagName('select');
+    for (var i = 0;i<elements.length;i++) 
+    {
+        skip_field(elements[i].id);
+    }
+  }
+</script>

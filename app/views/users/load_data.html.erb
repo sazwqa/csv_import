@@ -1,0 +1,14 @@
+<h1>Load CSV Data</h1>
+
+<% form_tag(select_fields_users_path, :method => :post, :multipart => true) do %>
+  <div>
+    <label for="file">File to Upload</label>
+    <%= file_field_tag "file" %>
+  </div>
+  <br />
+  <div>
+    <%= submit_tag 'Load' %>
+  </div>
+<% end -%>
+
+<%= link_to 'Back', users_path %>
