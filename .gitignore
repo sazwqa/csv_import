@@ -5,6 +5,7 @@ doc/*
 doc/**/*
 config/database.yml
 db/*.db
+db/*.sqlite3
 .project
 .eprj
 .loadpath
